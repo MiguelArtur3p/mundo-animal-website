@@ -266,6 +266,7 @@ body {
 
 .js [data-anime="accordion"] dd {
   display: none;
+  
 }
 
 [data-anime="accordion"] dt::after {
