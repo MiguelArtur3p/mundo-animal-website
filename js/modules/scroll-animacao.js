@@ -1,3 +1,5 @@
+import debounce from "./debounce.js";
+
 export default class AnimacaoScroll {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
@@ -15,6 +17,7 @@ export default class AnimacaoScroll {
   }
 
   checkDistance = () => {
+    console.log("teste");
     this.distance.forEach((item) => {
       if (window.scrollY > item.offset) {
         item.element.classList.add("ativo");
@@ -28,12 +31,12 @@ export default class AnimacaoScroll {
     if (this.sections.length) {
       this.getDistance();
       this.checkDistance();
-      window.addEventListener("scroll", this.checkDistance);
+      window.addEventListener("scroll", debounce(this.checkDistance, 200));
     }
     return this;
   }
 
-  stop(){
-   window.removeEventListener("scroll", this.checkDistance);
+  stop() {
+    window.removeEventListener("scroll", this.checkDistance);
   }
 }
