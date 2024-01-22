@@ -266,7 +266,6 @@ body {
 
 .js [data-anime="accordion"] dd {
   display: none;
-  
 }
 
 [data-anime="accordion"] dt::after {
@@ -303,6 +302,21 @@ body {
 .js [data-anime="scroll"].ativo {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+[data-semana]::after {
+  display: inline-block;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #e54;
+  border-radius: 50%;
+  margin-left: 4px;
+  border: 2px solid #000;
+}
+
+[data-semana].aberto::after {
+  background: #3f4;
 }
 
 .btc-preco {
