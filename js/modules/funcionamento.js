@@ -26,14 +26,14 @@ export default class Funcionamento {
 
   ativaAberto() {
     if (this.estaAberto()) {
-      this.dadosFuncionamento();
-      this.dadosAgora();
       this.funcionamento.classList.add("aberto");
     }
   }
 
   init() {
     if (this.funcionamento) {
+      this.dadosFuncionamento();
+      this.dadosAgora();
       this.ativaAberto();
     }
     return this;
